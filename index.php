@@ -16,7 +16,19 @@ $bairro_nasc = $_POST['bairro_nasc'];
 $cpf = $_POST['cpf'];
 $rg = $_POST['rg'];
 $rg_data = $_POST['rg_data'];
-$endereco = $_POST['endereco'];
+
+
+
+$rua = $_POST['rua_endereco'];
+$numero = $_POST['numero_endereco'];
+$complemento = $_POST['complemento'];
+$bairro = $_POST['bairro_endereco'];
+$cidade = $_POST['cidade_endereco'];
+
+
+
+
+
 $usuario = $_POST['usuario'];
 $senha = $_POST['senha'];
 $profissao = $_POST['profissao'];
@@ -29,8 +41,8 @@ $peso = $_POST['peso'];
 
 
 $result = mysqli_query($conexao, "INSERT INTO 
-usuario_cadastro(nome,telefone_1,telefone_2,email,email_recu,data_nasc,cidade_nasc,bairro_nasc,cpf,rg,rg_data,endereco,usuario,senha,profissao,nivel_escola,estado_civil,altura,peso)
-values('$nome','$telefone1','$telefone2','$email','$email_recu','$data_nasc','$cidade_nasc','$bairro_nasc','$cpf','$rg','$rg_data','$endereco','$usuario','$senha','$profissao','$nivel_escola','$estado_civil','$altura','$peso')");
+usuario_cadastro(nome, telefone_1, telefone_2, email, email_recu, data_nasc, cidade_nasc, bairro_nasc, cpf, rg, rg_data, rua_endereco, numero_endereco, complemento, bairro_endereco, cidade_endereco, usuario,senha,profissao,nivel_escola,estado_civil,altura,peso)
+values('$nome','$telefone1','$telefone2','$email','$email_recu','$data_nasc','$cidade_nasc','$bairro_nasc','$cpf','$rg','$rg_data','$rua','$numero','$complemento','$bairro','$cidade','$usuario','$senha','$profissao','$nivel_escola','$estado_civil','$altura','$peso')");
 
 }
 
@@ -96,9 +108,32 @@ values('$nome','$telefone1','$telefone2','$email','$email_recu','$data_nasc','$c
             <br>
             <input type="date" name="rg_data" id="rg_data" required/>
             <br>
-            <label for="endereco">Endereço</label>
             <br>
-            <input type="text" name="endereco" id="endereco" required/>
+            <div>Endereço
+                <br>
+                <br>
+                <label for="rua_endereco">Rua</label>
+                <br>
+                <input type="text" name="rua_endereco" id="rua_endereco" required/>
+                <br>
+                <label for="numero_endereco">Número</label>
+                <br>
+                <input type="text" name="numero_endereco" id="numero_endereco" required/>
+                <br>
+                <label for="complemento">Complemento</label>
+                <br>
+                <input type="text" name="complemento" id="complemento" required/>
+                <br>
+                <label for="bairro_endereco">Bairro</label>
+                <br>
+                <input type="text" name="bairro_endereco" id="bairro_endereco" required/>
+                <br>
+                <label for="cidade_endereco">Cidade</label>
+                <br>
+                <input type="text" name="cidade_endereco" id="cidade_endereco" required/>
+                <br>
+            </div>
+            <br>
             <br>
             <label for="usuario">Usuario</label>
             <br>
@@ -122,11 +157,11 @@ values('$nome','$telefone1','$telefone2','$email','$email_recu','$data_nasc','$c
             <br>
             <label for="altura">Altura</label>
             <br>
-            <input type="text" name="altura" id="altura" required/>
+            <input type="number" name="altura" id="altura" required/>
             <br>
             <label for="peso">Peso</label>
             <br>
-            <input type="text" name="peso" id="peso" required/>
+            <input type="number" name="peso" id="peso" required/>
             <br>
             <input type="submit" name="submit" id="submit" class="submit-button"/>
         </fieldset>
